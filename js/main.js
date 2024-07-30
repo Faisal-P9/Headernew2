@@ -2,6 +2,183 @@
 
 
 
+document.addEventListener('readystatechange', function() {
+  document.body.style.visibility = 'visible';
+
+  let tHeader0 = gsap.timeline({ paused: true})
+
+  tHeader0
+
+  .add('head', '+=2')
+  .to('.header__paralaxBlack', { duration: 1.5, maskPosition: "100% 0%", ease: "steps(45)" }, 'head')
+  .to('.header__paralaxColor', { duration: 0, opacity: 1, ease: "none" }, 'head-=0.1')
+  .to('.header__paralaxBlack', { duration: 0, display: 'none', ease: "none", onComplete: cloudAnimation })
+  .to('.header__paralaxBlack', { duration: 0, display: 'none', ease: "none", onComplete: islandAnimation }, '+=2')
+  // .to('.header__paralaxBlack', { duration: 0, opacity: 0, ease: "none", onComplete: islandAnimation }, 'head')
+
+
+  let tHeader = gsap.timeline({ paused: true, repeat: -1, repeatDelay: -0.5})
+
+    tHeader
+
+    .add('flow', '+=0.5')
+    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: '3deg', ease: "none" }, 'flow')
+    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: '3deg', ease: "none" }, 'flow')
+
+    .add('flow2')
+    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: '-3deg', ease: "none" }, 'flow2')
+    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: '-3deg', ease: "none" }, 'flow2')
+
+    .add('flow3')
+    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: 0, ease: "none" }, 'flow3')
+    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: 0, ease: "none" }, 'flow3')
+
+    .add('flow4')
+    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: '3deg', ease: "none" }, 'flow4')
+    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: '3deg', ease: "none" }, 'flow4')
+
+    .add('flow5')
+    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: '-3deg', ease: "none" }, 'flow5')
+    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: '-3deg', ease: "none" }, 'flow5')
+
+    .add('flow6')
+    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: 0, ease: "none" }, 'flow6')
+    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: 0, ease: "none" }, 'flow6')
+
+    .add('flow7')
+    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: '3deg', ease: "none" }, 'flow7')
+    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: '3deg', ease: "none" }, 'flow7')
+
+    .add('flow8')
+    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: '-3deg', ease: "none" }, 'flow8')
+    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: '-3deg', ease: "none" }, 'flow8')
+
+    .add('flow9')
+    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: 0, ease: "none" }, 'flow9')
+    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: 0, ease: "none" }, 'flow9')
+
+
+  if (document.readyState === 'complete') {
+// Hide the loading overlay and show the content
+    document.getElementById('loader').style.display = 'none';
+    document.getElementById('allContents').style.display = 'block';
+
+// Make the body visible now that everything is loaded
+    document.body.style.visibility = 'visible';
+
+    tHeader0.play();
+    tHeader.play();
+
+  }
+
+// })
+
+
+    
+  function cloudAnimation() {
+    let tHeader2 = gsap.timeline({repeat: -1, repeatDelay: -0.2})
+    tHeader2
+    .to('#cloud2', { duration: 20, x: 100, ease: "none" })
+    .to('#cloud2', { duration: 20, x: 0, ease: "none" }, '-=0.1')
+  }
+
+  function islandAnimation() {
+    let tHeader4 = gsap.timeline({repeat: -1, repeatDelay: -0.2})
+    tHeader4
+    .add('island')
+    .to('#small_island', { duration: 2, y: -5, ease: "none" }, 'island')
+    .to('#middle_island', { duration: 2, y: -10, ease: "none" }, 'island')
+    .to('#big_island', { duration: 2, y: -10, ease: "none" }, 'island+=0.4')
+    .to('#small_island_left', { duration: 2, y: -10, ease: "none" }, 'island+=0.8')
+
+    .add('island2', '-=0.2')
+    .to('#small_island', { duration: 4, y: 5, ease: "none" }, 'island2')
+    .to('#middle_island', { duration: 4, y: 10, ease: "none" }, 'island2')
+    .to('#big_island', { duration: 4, y: 10, ease: "none" }, 'island2+=0.4')
+    .to('#small_island_left', { duration: 4, y: 10, ease: "none" }, 'island2+=0.8')
+
+    .add('island3', '-=0.4')
+    .to('#small_island', { duration: 2, y: 0, ease: "none" }, 'island3')
+    .to('#middle_island', { duration: 2, y: 0, ease: "none" }, 'island3')
+    .to('#big_island', { duration: 2, y: 0, ease: "none" }, 'island3+=0.4')
+    .to('#small_island_left', { duration: 2, y: 0, ease: "none" }, 'island3+=0.8')
+  }
+
+
+
+  $(window).scroll(function () {
+
+    let bg = document.getElementById('bg');
+    let planet = document.getElementById('planet1');
+    let big_island = document.getElementById('big_island');
+    let small_island_left = document.getElementById('small_island_left');
+    let small_island = document.getElementById('small_island');
+    let middle_island = document.getElementById('middle_island');
+    let planet2 = document.getElementById('planet2');
+    let grass = document.getElementById('grass');
+    let cloud1 = document.getElementById('cloud1');
+    let cloud2 = document.getElementById('cloud2');
+    let sun = document.getElementById('sun');
+    let header_text = document.getElementById('header__text');
+
+    let bg_black = document.getElementById('bg_black');
+    let planet_black = document.getElementById('planet1_black');
+    let big_island_black = document.getElementById('big_island_black');
+    let small_island_left_black = document.getElementById('small_island_left_black');
+    let small_island_black = document.getElementById('small_island_black');
+    let middle_island_black = document.getElementById('middle_island_black');
+    let planet2_black = document.getElementById('planet2_black');
+    let grass_black = document.getElementById('grass_black');
+    let cloud1_black = document.getElementById('cloud1_black');
+    let cloud2_black = document.getElementById('cloud2_black');
+    let sun_black = document.getElementById('sun_black');
+    let header_text_black = document.getElementById('header__textBlack');
+    let header_paralaxBlack = document.getElementsByClassName('header__paralaxBlack');
+    
+
+
+    let value = window.scrollY;
+    let value2 = window.scrollY;
+    
+    console.log(header_paralaxBlack[0].style.opacity)
+    // if(header_paralaxBlack)
+
+      if( !(value2 >= 790) ) {
+        planet_black.style.marginLeft  = value2 * -0.3 + 'px';
+        big_island_black.style.marginBottom  = value2 * 0.1 + 'px';
+        small_island_black.style.marginBottom  = value2 * 0.01 + 'px';
+        small_island_left_black.style.marginBottom  = value2 * 0.05 + 'px';
+        middle_island_black.style.marginBottom  = value2 * 0.05 + 'px';
+        planet2_black.style.marginLeft  = value2 * 0.2 + 'px';
+        // color_cloud_black.style.marginLeft  = value2 * -0.25 + 'px';
+        // planet2_black.style.marginBottom  = value2 * -0.05 + 'px';
+        grass_black.style.marginTop = value2 * -0.12 + 'px';
+        header_text_black.style.marginTop = value2 * 0.25 + 'px';
+        sun_black.style.marginBottom = value2 * -0.5 + 'px';
+      }
+
+
+
+      if( !(value >= 790) ) {
+        bg.style.opacity  = 0 + (value * 0.003);
+        planet.style.marginLeft  = value * -0.3 + 'px';
+        big_island.style.marginBottom  = value * 0.1 + 'px';
+        small_island.style.marginBottom  = value * 0.01 + 'px';
+        small_island_left.style.marginBottom  = value * 0.05 + 'px';
+        middle_island.style.marginBottom  = value * 0.05 + 'px';
+        planet2.style.marginLeft  = value * 0.2 + 'px';
+        // color_cloud.style.marginLeft  = value * -0.25 + 'px';
+        // planet2.style.marginBottom  = value * -0.05 + 'px';
+        header_text.style.marginTop = value * 0.25 + 'px';
+        grass.style.marginTop = value * -0.12 + 'px';
+        sun.style.marginBottom = value * -0.5 + 'px';
+      }
+
+
+  });
+
+});
+
  
 
 
@@ -1841,181 +2018,3 @@
 });
 
 
-
-
-document.addEventListener('readystatechange', function() {
-  document.body.style.visibility = 'visible';
-
-  let tHeader0 = gsap.timeline({ paused: true})
-
-  tHeader0
-
-  .add('head', '+=2')
-  .to('.header__paralaxBlack', { duration: 1.5, maskPosition: "100% 0%", ease: "steps(45)" }, 'head')
-  .to('.header__paralaxColor', { duration: 0, opacity: 1, ease: "none" }, 'head-=0.1')
-  .to('.header__paralaxBlack', { duration: 0, display: 'none', ease: "none", onComplete: cloudAnimation })
-  .to('.header__paralaxBlack', { duration: 0, display: 'none', ease: "none", onComplete: islandAnimation }, '+=2')
-  // .to('.header__paralaxBlack', { duration: 0, opacity: 0, ease: "none", onComplete: islandAnimation }, 'head')
-
-
-  let tHeader = gsap.timeline({ paused: true, repeat: -1, repeatDelay: -0.5})
-
-    tHeader
-
-    .add('flow', '+=0.5')
-    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: '3deg', ease: "none" }, 'flow')
-    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: '3deg', ease: "none" }, 'flow')
-
-    .add('flow2')
-    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: '-3deg', ease: "none" }, 'flow2')
-    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: '-3deg', ease: "none" }, 'flow2')
-
-    .add('flow3')
-    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: 0, ease: "none" }, 'flow3')
-    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: 0, ease: "none" }, 'flow3')
-
-    .add('flow4')
-    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: '3deg', ease: "none" }, 'flow4')
-    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: '3deg', ease: "none" }, 'flow4')
-
-    .add('flow5')
-    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: '-3deg', ease: "none" }, 'flow5')
-    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: '-3deg', ease: "none" }, 'flow5')
-
-    .add('flow6')
-    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: 0, ease: "none" }, 'flow6')
-    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: 0, ease: "none" }, 'flow6')
-
-    .add('flow7')
-    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: '3deg', ease: "none" }, 'flow7')
-    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: '3deg', ease: "none" }, 'flow7')
-
-    .add('flow8')
-    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: '-3deg', ease: "none" }, 'flow8')
-    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: '-3deg', ease: "none" }, 'flow8')
-
-    .add('flow9')
-    .to('.small_flower', { duration: 2, opacity: 1, transformOrigin: "46% 100%", rotationZ: 0, ease: "none" }, 'flow9')
-    .to('.big_flower', { duration: 2, opacity: 1, transformOrigin: "42% 100%", rotationZ: 0, ease: "none" }, 'flow9')
-
-
-  if (document.readyState === 'complete') {
-// Hide the loading overlay and show the content
-    document.getElementById('loader').style.display = 'none';
-    document.getElementById('allContents').style.display = 'block';
-
-// Make the body visible now that everything is loaded
-    document.body.style.visibility = 'visible';
-
-    tHeader0.play();
-    tHeader.play();
-
-  }
-
-// })
-
-
-    
-  function cloudAnimation() {
-    let tHeader2 = gsap.timeline({repeat: -1, repeatDelay: -0.2})
-    tHeader2
-    .to('#cloud2', { duration: 20, x: 100, ease: "none" })
-    .to('#cloud2', { duration: 20, x: 0, ease: "none" }, '-=0.1')
-  }
-
-  function islandAnimation() {
-    let tHeader4 = gsap.timeline({repeat: -1, repeatDelay: -0.2})
-    tHeader4
-    .add('island')
-    .to('#small_island', { duration: 2, y: -5, ease: "none" }, 'island')
-    .to('#middle_island', { duration: 2, y: -10, ease: "none" }, 'island')
-    .to('#big_island', { duration: 2, y: -10, ease: "none" }, 'island+=0.4')
-    .to('#small_island_left', { duration: 2, y: -10, ease: "none" }, 'island+=0.8')
-
-    .add('island2', '-=0.2')
-    .to('#small_island', { duration: 4, y: 5, ease: "none" }, 'island2')
-    .to('#middle_island', { duration: 4, y: 10, ease: "none" }, 'island2')
-    .to('#big_island', { duration: 4, y: 10, ease: "none" }, 'island2+=0.4')
-    .to('#small_island_left', { duration: 4, y: 10, ease: "none" }, 'island2+=0.8')
-
-    .add('island3', '-=0.4')
-    .to('#small_island', { duration: 2, y: 0, ease: "none" }, 'island3')
-    .to('#middle_island', { duration: 2, y: 0, ease: "none" }, 'island3')
-    .to('#big_island', { duration: 2, y: 0, ease: "none" }, 'island3+=0.4')
-    .to('#small_island_left', { duration: 2, y: 0, ease: "none" }, 'island3+=0.8')
-  }
-
-
-
-  $(window).scroll(function () {
-
-    let bg = document.getElementById('bg');
-    let planet = document.getElementById('planet1');
-    let big_island = document.getElementById('big_island');
-    let small_island_left = document.getElementById('small_island_left');
-    let small_island = document.getElementById('small_island');
-    let middle_island = document.getElementById('middle_island');
-    let planet2 = document.getElementById('planet2');
-    let grass = document.getElementById('grass');
-    let cloud1 = document.getElementById('cloud1');
-    let cloud2 = document.getElementById('cloud2');
-    let sun = document.getElementById('sun');
-    let header_text = document.getElementById('header__text');
-
-    let bg_black = document.getElementById('bg_black');
-    let planet_black = document.getElementById('planet1_black');
-    let big_island_black = document.getElementById('big_island_black');
-    let small_island_left_black = document.getElementById('small_island_left_black');
-    let small_island_black = document.getElementById('small_island_black');
-    let middle_island_black = document.getElementById('middle_island_black');
-    let planet2_black = document.getElementById('planet2_black');
-    let grass_black = document.getElementById('grass_black');
-    let cloud1_black = document.getElementById('cloud1_black');
-    let cloud2_black = document.getElementById('cloud2_black');
-    let sun_black = document.getElementById('sun_black');
-    let header_text_black = document.getElementById('header__textBlack');
-    let header_paralaxBlack = document.getElementsByClassName('header__paralaxBlack');
-    
-
-
-    let value = window.scrollY;
-    let value2 = window.scrollY;
-    
-    console.log(header_paralaxBlack[0].style.opacity)
-    // if(header_paralaxBlack)
-
-      if( !(value2 >= 790) ) {
-        planet_black.style.marginLeft  = value2 * -0.3 + 'px';
-        big_island_black.style.marginBottom  = value2 * 0.1 + 'px';
-        small_island_black.style.marginBottom  = value2 * 0.01 + 'px';
-        small_island_left_black.style.marginBottom  = value2 * 0.05 + 'px';
-        middle_island_black.style.marginBottom  = value2 * 0.05 + 'px';
-        planet2_black.style.marginLeft  = value2 * 0.2 + 'px';
-        // color_cloud_black.style.marginLeft  = value2 * -0.25 + 'px';
-        // planet2_black.style.marginBottom  = value2 * -0.05 + 'px';
-        grass_black.style.marginTop = value2 * -0.12 + 'px';
-        header_text_black.style.marginTop = value2 * 0.25 + 'px';
-        sun_black.style.marginBottom = value2 * -0.5 + 'px';
-      }
-
-
-
-      if( !(value >= 790) ) {
-        bg.style.opacity  = 0 + (value * 0.003);
-        planet.style.marginLeft  = value * -0.3 + 'px';
-        big_island.style.marginBottom  = value * 0.1 + 'px';
-        small_island.style.marginBottom  = value * 0.01 + 'px';
-        small_island_left.style.marginBottom  = value * 0.05 + 'px';
-        middle_island.style.marginBottom  = value * 0.05 + 'px';
-        planet2.style.marginLeft  = value * 0.2 + 'px';
-        // color_cloud.style.marginLeft  = value * -0.25 + 'px';
-        // planet2.style.marginBottom  = value * -0.05 + 'px';
-        header_text.style.marginTop = value * 0.25 + 'px';
-        grass.style.marginTop = value * -0.12 + 'px';
-        sun.style.marginBottom = value * -0.5 + 'px';
-      }
-
-
-  });
-
-});
