@@ -3,11 +3,12 @@
 
 
 document.addEventListener('readystatechange', function() {
-  document.body.style.visibility = 'visible';
+  // document.body.style.visibility = 'visible';
 
   let tHeader0 = gsap.timeline({ paused: true})
 
   tHeader0
+  .to('#allContents', { duration: 0, display: 'block', ease: "none" })
 
   .add('head', '+=2')
   .to('.header__paralaxBlack', { duration: 1.5, maskPosition: "100% 0%", ease: "steps(45)" }, 'head')
@@ -61,10 +62,10 @@ document.addEventListener('readystatechange', function() {
   if (document.readyState === 'complete') {
 // Hide the loading overlay and show the content
     document.getElementById('loader').style.display = 'none';
-    document.getElementById('allContents').style.display = 'block';
+    // document.getElementById('allContents').style.display = 'block';
 
 // Make the body visible now that everything is loaded
-    document.body.style.visibility = 'visible';
+    // document.body.style.visibility = 'visible';
 
     tHeader0.play();
     tHeader.play();
