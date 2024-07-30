@@ -174,6 +174,8 @@ document.addEventListener('readystatechange', function() {
         sun.style.marginBottom = value * -0.5 + 'px';
       }
 
+      header_text.style.transition = "0.3s linear";
+      header_text_black.style.transition = "0.3s linear";
 
   });
 

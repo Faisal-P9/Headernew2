@@ -81,8 +81,7 @@ body {
   letter-spacing: 2px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 100% 100%;
-  transition: 0.3s linear; }
+  background-position: 100% 100%; }
   @media (min-width: 250.0625em) {
     .header__text {
       font-size: 6.5rem; } }
