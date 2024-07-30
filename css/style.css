@@ -572,7 +572,8 @@ body {
     mask-image: url("https://s0.2mdn.net/creatives/assets/4256248/mask1.png");
     mask-size: cover;
     mask-position: 0% 0%;
-    transition: -webkit-mask-position; }
+    transition: -webkit-mask-position;
+    z-index: 4; }
     .header__paralaxBlack img {
       position: absolute;
       bottom: 0%;
@@ -583,7 +584,8 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-    scroll-behavior: smooth; }
+    scroll-behavior: smooth;
+    opacity: 0; }
     .header__paralaxColor img {
       position: absolute;
       bottom: 0%;
