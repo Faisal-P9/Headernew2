@@ -11,7 +11,7 @@ document.addEventListener('readystatechange', function() {
 
   .add('head', '+=2')
   .to('.header__paralaxBlack', { duration: 1.5, maskPosition: "100% 0%", ease: "steps(45)" }, 'head')
-  .to('.header__paralaxColor', { duration: 0, opacity: 1, ease: "none" }, 'head-=0.1')
+  .to('.header__paralaxColor', { duration: 0, filter: 'grayscale(0%)', '-webkit-filter':'grayscale(0%)', ease: "none" }, 'head-=0.1')
   .to('.header__paralaxBlack', { duration: 0, display: 'none', ease: "none", onComplete: cloudAnimation })
   .to('.header__paralaxBlack', { duration: 0, display: 'none', ease: "none", onComplete: islandAnimation }, '+=2')
   // .to('.header__paralaxBlack', { duration: 0, opacity: 0, ease: "none", onComplete: islandAnimation }, 'head')
